@@ -23,11 +23,11 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
 
 
-        binding.buttonIniciar.setOnClickListener {
+        binding.startButton.setOnClickListener {
             viewModel.startRace()
         }
 
-        binding.buttonParar.setOnClickListener {
+        binding.stopButton.setOnClickListener {
             viewModel.stopRace()
         }
 
@@ -36,15 +36,15 @@ class MainActivity : AppCompatActivity() {
             viewModel.resetProgressAllHorses()
         }
 
-        viewModel.progressRed.observe(this, Observer { progress ->
+        viewModel.progressRed.observe(this) { progress ->
             binding.progressRed.setProgressCompat(progress, true)
-        })
+        }
 
-        viewModel.progressGreen.observe(this, Observer { progress ->
+        viewModel.progressGreen.observe(this) { progress ->
             binding.progressGreen.setProgressCompat(progress, true)
-        })
+        }
 
-        viewModel.winnerText.observe(this, Observer { winner ->
+        viewModel.winnerText.observe(this) { winner ->
             binding.tvWinner.text = winner
             binding.tvWinner.visibility = if (winner.isNotEmpty()) {
                 View.VISIBLE
@@ -52,12 +52,12 @@ class MainActivity : AppCompatActivity() {
                 View.GONE
             }
 
-            val winningHorseColor = when(winner){
+            val winningHorseColor = when (winner) {
                 "Winner: Red Horse" -> "#FF0000"
                 "Winner: Green Horse" -> "#00FF00"
-                else ->  "#000000"
+                else -> "#000000"
             }
             binding.tvWinner.setTextColor(Color.parseColor(winningHorseColor))
-        })
+        }
     }
 }
