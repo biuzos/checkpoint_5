@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.random.Random
 import kotlin.random.nextInt
@@ -43,7 +44,7 @@ class MainActivityViewModel : ViewModel() {
                     _winnerText.postValue("Winner: Green Horse")
                     break
                 }
-
+            delay(1500)
             }
         }
 
@@ -56,5 +57,9 @@ class MainActivityViewModel : ViewModel() {
     fun resetProgressAllHorses() {
         _progressRed.value = 0
         _progressGreen.value = 0
+    }
+
+    fun clearTextWinner(){
+        _winnerText.value = ""
     }
 }

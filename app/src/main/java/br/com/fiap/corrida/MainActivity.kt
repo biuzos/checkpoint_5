@@ -3,6 +3,7 @@ package br.com.fiap.corrida
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import br.com.fiap.corrida.databinding.ActivityMainBinding
@@ -27,6 +28,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonParar.setOnClickListener {
             viewModel.stopRace()
+        }
+
+        binding.buttonRestart.setOnClickListener {
+            viewModel.clearTextWinner()
+            viewModel.resetProgressAllHorses()
         }
 
         viewModel.progressRed.observe(this, Observer { progress ->
