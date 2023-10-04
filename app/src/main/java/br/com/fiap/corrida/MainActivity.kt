@@ -1,5 +1,6 @@
 package br.com.fiap.corrida
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -50,6 +51,13 @@ class MainActivity : AppCompatActivity() {
             } else {
                 View.GONE
             }
+
+            val winningHorseColor = when(winner){
+                "Winner: Red Horse" -> "#FF0000"
+                "Winner: Green Horse" -> "#00FF00"
+                else ->  "#000000"
+            }
+            binding.tvWinner.setTextColor(Color.parseColor(winningHorseColor))
         })
     }
 }
