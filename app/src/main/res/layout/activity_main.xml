@@ -10,10 +10,10 @@
         android:id="@+id/title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="@dimen/margin_top1"
         android:text="@string/title"
         android:textFontWeight="700"
-        android:textSize="32sp"
+        android:textSize="@dimen/text_big"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,9 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/margin_top2"
         android:text="Start"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title_tv" />
 
@@ -33,10 +33,10 @@
         android:id="@+id/stop_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/margin_top2"
         android:layout_marginEnd="32dp"
         android:text="Stop"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title_tv" />
 
@@ -44,11 +44,11 @@
         android:id="@+id/cavalo_red_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="@dimen/margin_top1"
+        android:layout_marginTop="@dimen/margin_top1"
         android:text="Cavalo Vermelho"
         android:textColor="@color/red"
-        android:textSize="24sp"
+        android:textSize="@dimen/text_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/start_button" />
 
@@ -67,11 +67,11 @@
         android:id="@+id/cavalo_green_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="@dimen/margin_top1"
+        android:layout_marginTop="@dimen/margin_top1"
         android:text="Cavalo Verde"
         android:textColor="@color/green"
-        android:textSize="24sp"
+        android:textSize="@dimen/text_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cavalo_red_tv" />
 
@@ -91,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:textSize="28sp"
+        android:textSize="@dimen/text_medium"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -103,6 +103,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Restart"
+        android:textSize="@dimen/text_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_winner" />
